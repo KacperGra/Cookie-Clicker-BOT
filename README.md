@@ -21,7 +21,7 @@ Language and libraries used to create bot
 1. Clone repository on your project or download zip file.
 
 ### Google Chrome 
-1. Download [ChromeDriver](https://chromedriver.chromium.org)
+1. Download [Chrome Driver](https://chromedriver.chromium.org)
 2. In settings.py file set self.chromedriver_path to path where you have your ChromeDriver
 
 Run your bot using console command in project directory
