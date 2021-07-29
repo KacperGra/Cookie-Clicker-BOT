@@ -1,5 +1,5 @@
 # Cookie Clicker BOT
-Bot is fully created by KacperGra.
+Bot is fully created by [KacperGra](https://github.com/KacperGra)
 
 ## About
 Language and libraries used to create bot
