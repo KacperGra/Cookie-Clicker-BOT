@@ -6,7 +6,10 @@ Language and libraries used to create bot
 - Python 3.7.9
 - Selenium (webdriver)
 
-Bot is currently supporting only Google Chrome browser.
+### Bot is currently supporting
+- Google Chrome
+- Opera (Coming soon)
+- Firefox (Coming soon)
 
 ### Fetaures
 - Very fast auto clicker
