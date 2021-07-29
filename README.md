@@ -1,0 +1,2 @@
+# Cookie Clicker BOT
+ 
