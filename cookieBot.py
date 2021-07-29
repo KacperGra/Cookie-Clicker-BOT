@@ -53,12 +53,6 @@ class CookieBot:
             if item.get_attribute("class") == "product unlocked enabled":
                 items_ready_to_buy.append(item)
         if items_ready_to_buy:
-            if self.bought_last == False:
-                items_ready_to_buy.reverse()
-            self.bought_last = not self.bought_last
-
-            print(self.get_item_cost(items_ready_to_buy[0]))
-
             lowest_price = self.get_item_cost(items_ready_to_buy[0])
             lowest_price_item = items_ready_to_buy[0]
             for item in items_ready_to_buy:
