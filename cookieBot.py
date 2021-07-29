@@ -56,8 +56,18 @@ class CookieBot:
             if self.bought_last == False:
                 items_ready_to_buy.reverse()
             self.bought_last = not self.bought_last
-            
-            items_ready_to_buy[0].click()
+
+            print(self.get_item_cost(items_ready_to_buy[0]))
+
+            lowest_price = self.get_item_cost(items_ready_to_buy[0])
+            lowest_price_item = items_ready_to_buy[0]
+            for item in items_ready_to_buy:
+                item_cost = self.get_item_cost(item)
+                if item_cost <= lowest_price:
+                    lowest_price_item = item
+                    lowest_price = item_cost
+
+            lowest_price_item.click()
             next_check = True
             time.sleep(self.settings.buy_delay)
         if next_check:
@@ -81,23 +91,29 @@ class CookieBot:
                 if upgrade_attempt >= self.settings.upgarde_attempts_before_items:
                     self.check_items_to_buy()
                     upgrade_attempt = 0
-                    self.settings.upgarde_attempts_before_items +=1
+                    self.settings.upgarde_attempts_before_items += 1
                 clicks_done = 0
 
     def get_cookies_amount(self):
         try:
             cookie_number_div = self.window.find_element_by_xpath("/html/body/div/div[2]/div[15]/div[4]")
             cookie_number = cookie_number_div.text
-            fixed_number = ""
-            for sign in cookie_number:
-                if sign == ' ':
-                    break
-                if sign != ',':
-                    fixed_number += sign
-
-            return int(fixed_number)
+            return self.cost_string_to_int(cookie_number)
         except:
             pass
         return 0
+
+    def get_item_cost(self, WebElement):
+        return self.cost_string_to_int(WebElement.find_element_by_class_name("price").text)
+
+    def cost_string_to_int(self, string):
+        fixed_string = ""
+        for sign in string:
+            if sign == ' ':
+                break
+            if sign != ',':
+                fixed_string += sign
+        return int(fixed_string)
+
 
 
