@@ -6,4 +6,4 @@ class Settings:
         self.clicks_to_upgrade = 0
         self.chromedriver_path = "C:\chromedriver.exe"
         self.buy_delay = 0.1
-        self.upgarde_attempts_before_items = 10
+        self.upgarde_attempts_before_items = 5

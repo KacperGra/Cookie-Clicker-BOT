@@ -13,6 +13,7 @@ class CookieBot:
         self.url = "https://orteil.dashnet.org/cookieclicker/"
         self.window = None
         self.cookieClicker = CookieClicker()
+        self.bought_last = False
 
     def create_window(self):
         self.window = webdriver.Chrome(self.settings.chromedriver_path)
@@ -52,7 +53,10 @@ class CookieBot:
             if item.get_attribute("class") == "product unlocked enabled":
                 items_ready_to_buy.append(item)
         if items_ready_to_buy:
-            items_ready_to_buy.reverse()
+            if self.bought_last == False:
+                items_ready_to_buy.reverse()
+            self.bought_last = not self.bought_last
+            
             items_ready_to_buy[0].click()
             next_check = True
             time.sleep(self.settings.buy_delay)
@@ -68,13 +72,32 @@ class CookieBot:
             if clicks_done >= self.settings.clicks_to_upgrade:
                 
                 print(str(clicks_done) + " " + str(upgrade_attempt))
+                print(self.get_cookies_amount())
                 if self.check_upgrades():
                     self.check_items_to_buy()
                 else:
                     upgrade_attempt += 1
 
-                if upgrade_attempt == self.settings.upgarde_attempts_before_items:
+                if upgrade_attempt >= self.settings.upgarde_attempts_before_items:
                     self.check_items_to_buy()
                     upgrade_attempt = 0
+                    self.settings.upgarde_attempts_before_items +=1
                 clicks_done = 0
+
+    def get_cookies_amount(self):
+        try:
+            cookie_number_div = self.window.find_element_by_xpath("/html/body/div/div[2]/div[15]/div[4]")
+            cookie_number = cookie_number_div.text
+            fixed_number = ""
+            for sign in cookie_number:
+                if sign == ' ':
+                    break
+                if sign != ',':
+                    fixed_number += sign
+
+            return int(fixed_number)
+        except:
+            pass
+        return 0
+
 

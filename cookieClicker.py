@@ -5,3 +5,4 @@ class CookieClicker:
         self.first_upgrade_path = ""
         self.upgrades_to_buy = []
         self.items_to_buy = []
+        self.cookies_amount = 0
