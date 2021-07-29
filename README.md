@@ -1,9 +1,30 @@
 # Cookie Clicker BOT
-Bot is created by Kacperktbm
+Bot is fully created by KacperGra.
 
-## Fetaures
+## Description
+Language and libraries used to create bot
+- Python 3.7.9
+- Selenium (webdriver)
+
+Bot is currently supporting only Google Chrome browser.
+
+### Fetaures
 - Very fast auto clicker
 - Automatic buying upgrades
 - Automatic buying items
 - Displaying current cookies amount
+
+## How to install and run
+1. Clone repository on your project or download zip file.
+
+### Google Chrome 
+1. Download ChromeDriver https://chromedriver.chromium.org
+2. In settings.py file set self.chromedriver_path to path where you have your ChromeDriver
+
+Run your bot using console command in project directory
+```
+py main.py
+or 
+python main.py
+```
 
