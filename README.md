@@ -14,7 +14,7 @@ Language and libraries used to create bot
 - Firefox (Coming soon)
 
 ### Fetaures
-- Very fast auto clicker
+- Auto Clicker
 - Automatic buying upgrades
 - Automatic buying items
 - Displaying current cookies amount
