@@ -20,7 +20,7 @@ Language and libraries used to create bot
 - Displaying current cookies amount
 
 ## How to install and run
-1. Clone repository on your project or download zip file.
+1. Clone repository or download zip file.
 
 ### Google Chrome 
 1. Download [Chrome Driver](https://chromedriver.chromium.org)
