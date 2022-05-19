@@ -10,8 +10,6 @@ Language and libraries used to create bot
 
 ### Bot is currently supporting
 - Google Chrome
-- Opera (Coming soon)
-- Firefox (Coming soon)
 
 ### Fetaures
 - Auto Clicker
