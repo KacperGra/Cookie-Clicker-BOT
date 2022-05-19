@@ -1,4 +1,4 @@
-# Cookie Clicker BOT
+# Cookie Clicker BOT (WEB VERSION)
 ![image](https://user-images.githubusercontent.com/56999262/127496714-65aaef56-1b9e-4187-95c5-ac36053c2ef5.png)
 
 Bot is fully created by [KacperGra](https://github.com/KacperGra)
